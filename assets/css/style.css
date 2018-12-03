@@ -1,5 +1,5 @@
 .container{
-
+width: 100%;
 background-image: url("../images/OZ.jpg");
 margin: 0 auto;
 
@@ -9,12 +9,26 @@ margin: 0 auto;
 #questionContainer{
     width: 968px;
     height:500px;
-    margin: 10% 15% 5% 18%;
+    margin: 10% 25% 5% 8%;
     border-style: solid;
     border-color: aquamarine;
     border-width: 5px;
     background-color: cadetblue;
-    opacity: 0.6;
+    opacity: 0.8;
 
 }
+#buttons{
 
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+    text-align: left;
+    color: darkred;
+    
+}
+
+#gameTimer{
+    color: white;
+    text-align: center;
+}
