@@ -63,7 +63,12 @@ $(document).ready(function(){
             $('#currentChoices').empty();
             for (var i = 0; i < questions[index].choices.length; i++){
 
-                var newChoice = $('<button type="button" class="btn btn-success"></button>');
+                var newChoice = $('<button type="button" id="buttons" class="btn btn-success"></button>');
+                $("div").append("<ul></ul>");
+            for(var i in questions[index].choices.length) {
+                var li = "<li>";
+                 $("ul").append(li.concat(questions[index].choices[i]))
+            }
 
                 newChoice.text(questions[index].choices[i]);
 
@@ -74,24 +79,34 @@ $(document).ready(function(){
         nextQuestion();
 
         $(document).on('click','.btn',function(){
+            var audio = new Audio("../images/pretty.wav");
             var value = $(this).text();
             console.log(value);
             if(value === questions[index].correctAnswer){
                 right++;
                 alert("you are right");
+                $('#right').text(right);
+                
             }
             else{
+                var audio = new Audio("pretty.wav");
                 wrong++;
                 alert("You are wrong")
+                play(audio);
+                $('#wrong').text(wrong);
+                
             }
             index++;
             nextQuestion();
         })
-        var time = 10;
-        $('#gameTimer').html("Time Left: " + time);
+        var time = 100;
+        var minutes = Math.floor( time / 60);
+        var seconds = time - (minutes * 60);
+        $('#gameTimer').html("Time Left: " + minutes + " : " + seconds);
         var gameTimer = setInterval(function(){
             time--;
             $('#gameTimer').html("Time Left: " + time);
+            
             console.log(time)
             if(time === 0){
                 alert("Game Over!")
@@ -102,6 +117,7 @@ $(document).ready(function(){
 })       
         
         
+       
         
         //loop through the choices array in each question and display the choices to the screen in a button
         //when an answer is chosen it needs to go to the coorect answers count or inncorrect answers count
