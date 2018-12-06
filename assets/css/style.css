@@ -1,33 +1,32 @@
+
+/* Main body container and background image*/
 .container{
 width: 100%;
 background-image: url("../images/OZ.jpg");
 margin: 0 auto;
 
 }
-
-
+/* Question and answer container*/
 #questionContainer{
     width: 968px;
     height:400px;
-    margin: 0% 25% 5% 8%;
+    margin: 0% 25% 2% 8%;
     border-style: solid;
     border-color: aquamarine;
     border-width: 5px;
     background-color: cadetblue;
     opacity: 0.8;
-
 }
+/*Answer buttons*/
 #buttons{
-
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 25px;
     text-align: center;
     color: darkred;
-    
 }
-
+/*Game Timer Countdown*/
 #gameTimer{
     margin-top: 1%;
     color: #50C878;
@@ -35,20 +34,17 @@ margin: 0 auto;
     font-weight: bolder;
     font-size: 35px;
     text-align: center;
-    
 }
-
+/*Question Display*/
 #currentQuestion{
-
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 35px;
     text-align: center;
     color: darkred;
 }
-
+/*Background image for Game Timer*/
 .timerImage{
-
     background-image: url("../images/witch.gif");
     width: 480px;
     height: 280px;
@@ -60,10 +56,8 @@ margin: 0 auto;
     border-width: 5px;
     margin-right:55;
 }
-
+/*Wizard of Oz Trivia Logo*/
 #triviaLogo{
-
-    /* background-image: url("../images/dorothy.jpg"); */
     width: 200px;
     height: 282px;
     float: left;
@@ -74,9 +68,8 @@ margin: 0 auto;
     margin-right: 1%;
     opacity: 0.8;
 }
-
+/*Right and Wrong answer Container*/
 #score{
-    /* background-image: url("../images/dwitch.jpg"); */
     width: 200px;
     height: 282px;
     border-style: solid;
@@ -92,6 +85,7 @@ margin: 0 auto;
     color: #50C878;
     opacity: 0.7;
 }
+/*Trivia text on The Wizard of OZ logo*/
 #logoText{
     font-family: cursive;
     font-weight: bolder;
@@ -100,4 +94,16 @@ margin: 0 auto;
     color: rgb(192, 8, 8);
     margin-left: 53%;
     margin-top: 80%;
+}
+/*Footer container*/
+#footer{
+    width: 968px;
+    color:darkred;
+    background-color: #50C878;
+    border-style: solid;
+    border-color: aquamarine;
+    border-width: 5px;
+    opacity: 0.8;
+    text-align: center;
+    margin-left: 8%;
 }

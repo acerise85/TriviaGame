@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    
+    //Questions for trivia game
     var questions = [{
         question: "How old was Judy Garland when she filmed the The Wizard of Oz?",
         choices: ["12", "14", "16", "18"],
@@ -53,6 +53,8 @@ $(document).ready(function(){
         correctAnswer: "18",
     },
     ];
+
+    //score variables
     var right = 0;
     var wrong = 0;
 
@@ -62,9 +64,10 @@ $(document).ready(function(){
             $('#currentQuestion').html(questions[index].question);
             $('#currentChoices').empty();
             for (var i = 0; i < questions[index].choices.length; i++){
-
+                //button list creation for answer choices
                 var newChoice = $('<button type="button" id="buttons" class="btn btn-success"></button>');
                 $("div").append("<ul></ul>");
+                //for loop to create as many answer buttons as needed for user to choose from
             for(var i in questions[index].choices.length) {
                 var li = "<li>";
                  $("ul").append(li.concat(questions[index].choices[i]))
@@ -77,37 +80,52 @@ $(document).ready(function(){
             }
         }
         nextQuestion();
-
+        //on click event to chose an answer and advance to next question
         $(document).on('click','.btn',function(){
-            var audio = new Audio("../images/pretty.wav");
             var value = $(this).text();
             console.log(value);
+            //for loop to see if user chose correct answer
             if(value === questions[index].correctAnswer){
+                //if correct answer add 1 to right questions answered and play right guess audio
+                var audioElement = document.createElement("audio");
+
+                audioElement.setAttribute("src", "./assets/images/oz6.mp3");
+
+                audioElement.play();
                 right++;
-                alert("you are right");
+                //delay alert so audio will play
+                setTimeout(function(){alert("you are right")},1000);
                 $('#right').text(right);
                 
             }
+            //else answer is wrong and add one to wrong answer
             else{
-                var audio = new Audio("pretty.wav");
+                //if correct answer add 1 to wron questions answered and play wrong guess audio
+                var audioElement = document.createElement("audio");
+                audioElement.setAttribute("src", "./assets/images/pretty.mp3");
+                audioElement.play();
                 wrong++;
-                alert("You are wrong")
-                play(audio);
+                setTimeout(function(){alert("You are wrong")},1000);
                 $('#wrong').text(wrong);
                 
             }
+            //advance the choices to next array along with the correct question
             index++;
             nextQuestion();
         })
+        //game timer to count down from 1:40, which is 10 seconds per question
         var time = 100;
         var minutes = Math.floor( time / 60);
         var seconds = time - (minutes * 60);
         $('#gameTimer').html("Time Left: " + minutes + " : " + seconds);
         var gameTimer = setInterval(function(){
             time--;
-            $('#gameTimer').html("Time Left: " + time);
+             minutes = Math.floor( time / 60);
+             seconds = time - (minutes * 60);
+            $('#gameTimer').html("Time Left: " + minutes + " : " + seconds);
             
             console.log(time)
+            //alert game over when timer reaches 0
             if(time === 0){
                 alert("Game Over!")
                 clearInterval(gameTimer);
@@ -117,10 +135,6 @@ $(document).ready(function(){
 })       
         
         
-       
-        
-        //loop through the choices array in each question and display the choices to the screen in a button
-        //when an answer is chosen it needs to go to the coorect answers count or inncorrect answers count
 
 
 
