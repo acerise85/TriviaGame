@@ -136,7 +136,10 @@ $(document).ready(function(){
            
             //alert game over when timer reaches 0
             if(time === 0){
-                alert("Game Over!")
+                var audioElement = document.createElement("audio");
+                audioElement.setAttribute("src", "./assets/images/home.mp3");
+                audioElement.play();
+                setTimeout(function(){alert("Game Over!")},1000);
                 clearInterval(gameTimer);
             }               
         },1000)
