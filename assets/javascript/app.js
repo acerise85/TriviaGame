@@ -117,23 +117,32 @@ $(document).ready(function(){
         var time = 100;
         var minutes = Math.floor( time / 60);
         var seconds = time - (minutes * 60);
-        $('#gameTimer').html("Time Left: " + minutes + " : " + seconds);
+        $('#gameTimer').html("Time Left: 0" + minutes + ":" + seconds);
         var gameTimer = setInterval(function(){
             time--;
              minutes = Math.floor( time / 60);
              seconds = time - (minutes * 60);
-            $('#gameTimer').html("Time Left: " + minutes + " : " + seconds);
-            
-            console.log(time)
+            $('#gameTimer').html("Time Left: 0" + minutes + ":" + seconds);
+            //game timer display as it counts down
+            if(gameTimer < 60){
+                $('#gameTimer').html("Time Left: 0" + minutes + ":" + seconds);
+            }
+            if(seconds < 10){
+                $('#gameTimer').html("Time Left: 0" + minutes + ":0" + seconds);
+            }
+            else if(gameTimer === 0){
+                $('#gameTimer').html("Time Left: " + minutes + "00:00" + seconds);
+            }
+           
             //alert game over when timer reaches 0
             if(time === 0){
                 alert("Game Over!")
                 clearInterval(gameTimer);
-            }
-                
+            }               
         },1000)
-        
-})       
+    })       
+
+
         
         
 
