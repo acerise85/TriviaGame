@@ -1,16 +1,15 @@
 
 /* Main body container and background image*/
 .container{
-width: 100%;
 background-image: url("../images/OZ.jpg");
+width: 968px;
+height:400px;
 margin: 0 auto;
-
 }
 /* Question and answer container*/
 #questionContainer{
-    width: 968px;
-    height:400px;
-    margin: 0% 25% 2% 8%;
+    width: 100%;
+    margin: 3% 0% 2% 0%;
     border-style: solid;
     border-color: aquamarine;
     border-width: 5px;
@@ -28,7 +27,7 @@ margin: 0 auto;
 }
 /*Game Timer Countdown*/
 #gameTimer{
-    margin-top: 1%;
+    margin: 11% 5% 3% 5%;
     color: #50C878;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
@@ -48,24 +47,22 @@ margin: 0 auto;
     background-image: url("../images/witch.gif");
     width: 480px;
     height: 280px;
-    margin-left: 40%;
-    margin-bottom: 1%;
-    margin-top: 1%;
+    margin: 25% 0% 0% 0%;
     border-style: solid;
     border-color: aquamarine;
     border-width: 5px;
-    margin-right:55;
+    float: left;
+    
 }
 /*Wizard of Oz Trivia Logo*/
 #triviaLogo{
     width: 200px;
     height: 282px;
     float: left;
-    margin-left: 56%;
+    margin: 25% 0% 0% 0%;
     border-style: solid;
     border-color: aquamarine;
     border-width: 5px;
-    margin-right: 1%;
     opacity: 0.8;
 }
 /*Right and Wrong answer Container*/
@@ -76,8 +73,7 @@ margin: 0 auto;
     border-color: aquamarine;
     border-width: 5px;
     float: right;
-    margin-left: 26%;
-    margin-right: 0%;
+    margin: 22% 0% 3% 0%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     font-size: 25px;
@@ -92,12 +88,12 @@ margin: 0 auto;
     font-size: 60px;
     text-orientation: sideways-right;
     color: rgb(192, 8, 8);
-    margin-left: 53%;
-    margin-top: 80%;
+    margin-left: 5%;
+    margin-top: 55%;
 }
 /*Footer container*/
 #footer{
-    width: 968px;
+    width: 100%;
     color:darkred;
     background-color: #50C878;
     border-style: solid;
@@ -105,5 +101,5 @@ margin: 0 auto;
     border-width: 5px;
     opacity: 0.8;
     text-align: center;
-    margin-left: 8%;
+    
 }
